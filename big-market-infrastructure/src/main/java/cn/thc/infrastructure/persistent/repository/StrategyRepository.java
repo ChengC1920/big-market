@@ -3,6 +3,7 @@ package cn.thc.infrastructure.persistent.repository;
 import cn.thc.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.thc.domain.strategy.model.entity.StrategyEntity;
 import cn.thc.domain.strategy.model.entity.StrategyRuleEntity;
+import cn.thc.domain.strategy.model.vo.StrategyAwardRuleModelVO;
 import cn.thc.domain.strategy.repository.IStrategyRepository;
 import cn.thc.infrastructure.persistent.dao.IStrategyAwardDao;
 import cn.thc.infrastructure.persistent.dao.IStrategyDao;
@@ -16,7 +17,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -132,6 +132,15 @@ public class StrategyRepository implements IStrategyRepository {
         strategyRule.setRuleModel(ruleModel);
         return strategyRuleDao.queryStrategyRuleValue(strategyRule);
 
+    }
+
+    @Override
+    public StrategyAwardRuleModelVO queryStrategyAwardRuleModelVO(Long strategyId, Integer awardId) {
+        StrategyAward strategyAward = new StrategyAward();
+        strategyAward.setStrategyId(strategyId);
+        strategyAward.setAwardId(awardId);
+        String ruleModels = strategyAwardDao.queryStrategyAwardRuleModels(strategyAward);
+        return StrategyAwardRuleModelVO.builder().ruleModels(ruleModels).build();
     }
 
 
