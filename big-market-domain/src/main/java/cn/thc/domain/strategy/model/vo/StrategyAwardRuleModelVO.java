@@ -1,6 +1,6 @@
 package cn.thc.domain.strategy.model.vo;
 
-import cn.thc.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import cn.thc.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import cn.thc.types.common.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

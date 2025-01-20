@@ -1,8 +1,8 @@
-package cn.thc.domain.strategy.service.rule.factory;
+package cn.thc.domain.strategy.service.rule.filter.factory;
 
 import cn.thc.domain.strategy.model.entity.RuleActionEntity;
 import cn.thc.domain.strategy.service.annotation.LogicStrategy;
-import cn.thc.domain.strategy.service.rule.ILogicFilter;
+import cn.thc.domain.strategy.service.rule.filter.ILogicFilter;
 import com.alibaba.fastjson2.util.AnnotationUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
