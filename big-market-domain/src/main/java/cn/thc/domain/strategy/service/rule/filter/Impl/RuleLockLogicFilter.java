@@ -2,7 +2,7 @@ package cn.thc.domain.strategy.service.rule.filter.Impl;
 
 import cn.thc.domain.strategy.model.entity.RuleActionEntity;
 import cn.thc.domain.strategy.model.entity.RuleMatterEntity;
-import cn.thc.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import cn.thc.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import cn.thc.domain.strategy.repository.IStrategyRepository;
 import cn.thc.domain.strategy.service.annotation.LogicStrategy;
 import cn.thc.domain.strategy.service.rule.filter.ILogicFilter;

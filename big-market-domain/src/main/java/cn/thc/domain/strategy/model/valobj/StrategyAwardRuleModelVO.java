@@ -1,4 +1,4 @@
-package cn.thc.domain.strategy.model.vo;
+package cn.thc.domain.strategy.model.valobj;
 
 import cn.thc.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import cn.thc.types.common.Constants;

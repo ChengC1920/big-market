@@ -3,7 +3,7 @@ package cn.thc.domain.strategy.repository;
 import cn.thc.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.thc.domain.strategy.model.entity.StrategyEntity;
 import cn.thc.domain.strategy.model.entity.StrategyRuleEntity;
-import cn.thc.domain.strategy.model.vo.StrategyAwardRuleModelVO;
+import cn.thc.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 
 import java.util.List;
 import java.util.Map;
