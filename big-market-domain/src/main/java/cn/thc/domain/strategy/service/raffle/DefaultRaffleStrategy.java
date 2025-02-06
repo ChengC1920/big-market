@@ -1,10 +1,13 @@
 package cn.thc.domain.strategy.service.raffle;
 
+import cn.thc.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.thc.domain.strategy.model.valobj.RuleTreeVO;
 import cn.thc.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import cn.thc.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 import cn.thc.domain.strategy.repository.IStrategyRepository;
 import cn.thc.domain.strategy.service.AbstractRaffleStrategy;
+import cn.thc.domain.strategy.service.IRaffleAward;
+import cn.thc.domain.strategy.service.IRaffleStock;
 import cn.thc.domain.strategy.service.armory.IStrategyDispatch;
 import cn.thc.domain.strategy.service.rule.chain.ILogicChain;
 import cn.thc.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
@@ -13,6 +16,8 @@ import cn.thc.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngi
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Ninetee Tang
  * @description 默认的抽奖策略实现
@@ -20,7 +25,7 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
+public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRaffleAward, IRaffleStock {
 
 
     public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory defaultChainFactory, DefaultTreeFactory defaultTreeFactory) {
@@ -55,6 +60,11 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
     @Override
     public void updateStrategyAwardStock(Long strategyId, Integer awardId) {
         repository.updateStrategyAwardStock(strategyId, awardId);
+    }
+
+    @Override
+    public List<StrategyAwardEntity> queryRaffleStrategyAwardList(Long strategyId) {
+        return repository.queryStrategyAwardList(strategyId);
     }
 }
 
