@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Ninetee Tang
@@ -44,6 +45,16 @@ public class RedissonService implements IRedisService {
     @Override
     public <T> RDelayedQueue<T> getDelayedQueue(RBlockingQueue<T> rBlockingQueue) {
         return redissonClient.getDelayedQueue(rBlockingQueue);
+    }
+
+    @Override
+    public void setAtomicLong(String key, long value) {
+        redissonClient.getAtomicLong(key).set(value);
+    }
+
+    @Override
+    public Long getAtomicLong(String key) {
+        return redissonClient.getAtomicLong(key).get();
     }
 
     @Override
@@ -157,19 +168,15 @@ public class RedissonService implements IRedisService {
     }
 
     @Override
-    public Long getAtomicLong(String key) {
-        return redissonClient.getAtomicLong(key).get();
-    }
-
-    @Override
-    public void setAtomicLong(String key, Integer value) {
-        redissonClient.getAtomicLong(key).set(value);
-    }
-
-    @Override
     public Boolean setNx(String key) {
         return redissonClient.getBucket(key).trySet("lock");
     }
 
+    @Override
+    public Boolean setNx(String key, long expired, TimeUnit timeUnit) {
+        return redissonClient.getBucket(key).trySet("lock", expired, timeUnit);
+    }
+
 }
+
 
