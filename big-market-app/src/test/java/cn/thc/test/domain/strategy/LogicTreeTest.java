@@ -1,4 +1,4 @@
-package cn.thc.test.domain;
+package cn.thc.test.domain.strategy;
 
 import cn.thc.domain.strategy.model.valobj.*;
 import cn.thc.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
