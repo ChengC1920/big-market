@@ -66,6 +66,4 @@
         where user_id = #{userId} and activity_id = #{activityId}
     </update>
 
-
-
 </mapper>
