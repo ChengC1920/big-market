@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Ninetee Tang
- * @description 活动账户实体对象
+ * @description 活动账户（总）实体对象
  * @create 2025/3/4 15:13
  */
 @Data

@@ -9,7 +9,7 @@ import cn.thc.domain.activity.model.entity.SkuRechargeEntity;
  * @description 抽奖活动订单接口
  * @create 2025/3/4 15:20
  */
-public interface IRaffleOrder {
+public interface IRaffleActivityAccountQuotaService {
 
     /**
      * 以sku创建抽奖活动订单，获得参与抽奖资格（可消耗的次数）
@@ -29,7 +29,7 @@ public interface IRaffleOrder {
      * @param skuRechargeEntity 活动商品充值实体对象
      * @return 活动ID
      */
-    String createSkuRechargeOrder(SkuRechargeEntity skuRechargeEntity);
+    String createOrder(SkuRechargeEntity skuRechargeEntity);
 
 }
 

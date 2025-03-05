@@ -1,23 +1,23 @@
-package cn.thc.domain.activity.service;
+package cn.thc.domain.activity.service.quota;
 
 import cn.thc.domain.activity.model.entity.ActivityCountEntity;
 import cn.thc.domain.activity.model.entity.ActivityEntity;
 import cn.thc.domain.activity.model.entity.ActivitySkuEntity;
 import cn.thc.domain.activity.repository.IActivityRepository;
-import cn.thc.domain.activity.service.rule.factory.DefaultActivityChainFactory;
+import cn.thc.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 
 /**
  * @author Ninetee Tang
  * @description 抽奖活动的支撑类
  * @create 2025/3/4 18:03
  */
-public class RaffleActivitySupport {
+public class RaffleActivityAccountQuotaSupport {
 
     protected DefaultActivityChainFactory defaultActivityChainFactory;
 
     protected IActivityRepository activityRepository;
 
-    public RaffleActivitySupport(IActivityRepository activityRepository, DefaultActivityChainFactory defaultActivityChainFactory) {
+    public RaffleActivityAccountQuotaSupport(IActivityRepository activityRepository, DefaultActivityChainFactory defaultActivityChainFactory) {
         this.activityRepository = activityRepository;
         this.defaultActivityChainFactory = defaultActivityChainFactory;
     }

@@ -1,4 +1,4 @@
-package cn.thc.domain.activity.service.rule;
+package cn.thc.domain.activity.service.quota.rule;
 
 /**
  * @author Ninetee Tang

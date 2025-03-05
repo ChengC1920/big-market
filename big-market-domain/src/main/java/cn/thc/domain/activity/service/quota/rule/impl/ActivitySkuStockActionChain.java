@@ -1,4 +1,4 @@
-package cn.thc.domain.activity.service.rule.impl;
+package cn.thc.domain.activity.service.quota.rule.impl;
 
 import cn.thc.domain.activity.model.entity.ActivityCountEntity;
 import cn.thc.domain.activity.model.entity.ActivityEntity;
@@ -6,7 +6,7 @@ import cn.thc.domain.activity.model.entity.ActivitySkuEntity;
 import cn.thc.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 import cn.thc.domain.activity.repository.IActivityRepository;
 import cn.thc.domain.activity.service.armory.IActivityDispatch;
-import cn.thc.domain.activity.service.rule.AbstractActionChain;
+import cn.thc.domain.activity.service.quota.rule.AbstractActionChain;
 import cn.thc.types.enums.ResponseCode;
 import cn.thc.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
