@@ -3,6 +3,8 @@ package cn.thc.infrastructure.persistent.dao;
 import cn.thc.infrastructure.persistent.po.RaffleActivitySku;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @author Ninetee Tang
  * @description 商品sku dao
@@ -17,5 +19,6 @@ public interface IRaffleActivitySkuDao {
 
     void clearActivitySkuStock(Long sku);
 
+    List<RaffleActivitySku> queryActivitySkuListByActivityId(Long activityId);
 }
 

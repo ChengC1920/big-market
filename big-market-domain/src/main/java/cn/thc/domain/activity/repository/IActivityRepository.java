@@ -6,6 +6,7 @@ import cn.thc.domain.activity.model.entity.*;
 import cn.thc.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Ninetee Tang
@@ -46,7 +47,7 @@ public interface IActivityRepository {
 
     void saveCreatePartakeOrderAggregate(CreatePartakeOrderAggregate createPartakeOrderAggregate);
 
-
+    List<ActivitySkuEntity> queryActivitySkuListByActivityId(Long activityId);
 
 }
 
