@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * @author Ninetee Tang
  * @description 抽奖因子
@@ -20,5 +22,7 @@ public class RaffleFactorEntity {
     private String userId;
     /** 策略ID */
     private Long strategyId;
+    /** 活动结束时间 */
+    private Date endDateTime;
 
 }

@@ -32,7 +32,7 @@ public class DefaultTreeFactory {
     }
 
     /**
-     * 决策树个动作实习
+     * 决策树动作实体类
      */
     @Data
     @Builder

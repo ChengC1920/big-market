@@ -2,6 +2,8 @@ package cn.thc.domain.strategy.service.rule.tree.factory.engine;
 
 import cn.thc.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 
+import java.util.Date;
+
 /**
  * @author Ninetee Tang
  * @description 决策树引擎接口
@@ -9,6 +11,6 @@ import cn.thc.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
  */
 public interface IDecisionTreeEngine {
 
-    DefaultTreeFactory.StrategyAwardVO process(String userId, Long strategyId, Integer awardId);
+    DefaultTreeFactory.StrategyAwardVO process(String userId, Long strategyId, Integer awardId, Date endDateTime);
 
 }
