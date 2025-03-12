@@ -1,5 +1,6 @@
 package cn.thc.domain.activity.service;
 
+import cn.thc.domain.activity.model.entity.ActivityAccountEntity;
 import cn.thc.domain.activity.model.entity.ActivityOrderEntity;
 import cn.thc.domain.activity.model.entity.ActivityShopCartEntity;
 import cn.thc.domain.activity.model.entity.SkuRechargeEntity;
@@ -32,5 +33,9 @@ public interface IRaffleActivityAccountQuotaService {
     String createOrder(SkuRechargeEntity skuRechargeEntity);
 
     Integer queryRaffleActivityAccountDayPartakeCount(Long activityId, String userId);
+
+    ActivityAccountEntity queryActivityAccountEntity(Long activityId, String userId);
+
+    Integer queryRaffleActivityAccountPartakeCount(Long activityId, String userId);
 }
 
