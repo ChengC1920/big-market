@@ -1,5 +1,5 @@
 # 命令执行 docker-compose -f docker-compose-environment.yml up -d
-version: '3.9'
+version: "3.9"
 services:
   mysql:
     image: mysql:8.0.32
@@ -8,7 +8,7 @@ services:
     restart: always
     environment:
       TZ: Asia/Shanghai
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: 20020601
     networks:
       - my-network
     depends_on:
@@ -18,7 +18,7 @@ services:
     volumes:
       - ./mysql/sql:/docker-entrypoint-initdb.d
     healthcheck:
-      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
       timeout: 10s
       retries: 10
@@ -43,7 +43,7 @@ services:
     environment:
       - PMA_HOST=mysql
       - PMA_PORT=3306
-      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=20020601
     depends_on:
       mysql:
         condition: service_healthy
@@ -65,12 +65,13 @@ services:
     networks:
       - my-network
     healthcheck:
-      test: [ "CMD", "redis-cli", "ping" ]
+      test: ["CMD", "redis-cli", "ping"]
       interval: 10s
       timeout: 5s
       retries: 3
 
   # RedisAdmin https://github.com/joeferner/redis-commander
+  # 账密 admin/admin
   redis-admin:
     image: spryker/redis-commander:0.8.0
     container_name: redis-admin
@@ -81,7 +82,7 @@ services:
     environment:
       - REDIS_HOSTS=local:redis:6379
       - HTTP_USER=admin
-      - HTTP_PASSWORD=admin
+      - HTTP_PASSWORD=20020601
       - LANG=C.UTF-8
       - LANGUAGE=C.UTF-8
       - LC_ALL=C.UTF-8
@@ -103,11 +104,12 @@ services:
       - "15672:15672"
     environment:
       RABBITMQ_DEFAULT_USER: admin
-      RABBITMQ_DEFAULT_PASS: admin
+      RABBITMQ_DEFAULT_PASS: 20020601
     command: rabbitmq-server
     volumes:
       - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
-
+    networks:
+      - my-network
 
 networks:
   my-network:
